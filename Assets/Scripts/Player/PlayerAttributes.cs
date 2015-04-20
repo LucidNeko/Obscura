@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerInfoGUI : MonoBehaviour {
+public class PlayerAttributes : MonoBehaviour {
 
 
 	public GUISkin skin;
@@ -10,12 +10,17 @@ public class PlayerInfoGUI : MonoBehaviour {
 	private float hbWidth;
 	private float healthLevel;
 
+	private Vector3 ogPos;
+
 	void Start () {
-		hbWidth = 0;
+		healthLevel = hbWidth = 10;
+		ogPos = transform.position;
 	}
 
 	void Update () {
 		hbWidth = healthLevel;
+		if(CheckDead()) Respawn();
+
 	}
 
 
@@ -40,4 +45,23 @@ public class PlayerInfoGUI : MonoBehaviour {
 		healthLevel -= amount;
 	}
 
+
+
+
+	void OnTriggerEnter(Collider other) {
+		if (other.tag == "Orb") {
+			other.gameObject.SetActive(false);
+			AddHealth(20);
+		}
+	}
+
+	bool CheckDead(){
+		return healthLevel <= 0;
+	}
+
+	void Respawn(){
+		transform.position = ogPos;
+		healthLevel = 10;
+	}
+	
 }

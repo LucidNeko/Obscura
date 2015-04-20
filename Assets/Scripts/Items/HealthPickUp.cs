@@ -26,7 +26,6 @@ public class HealthPickUp : MonoBehaviour {
 			float zMove = transform.position.z - player.transform.position.z;
 			float yMove = transform.position.y - player.transform.position.y;
 
-
 			transform.position -= new Vector3 (xMove, yMove, zMove)*Time.deltaTime *3;
 
 
