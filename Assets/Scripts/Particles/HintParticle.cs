@@ -14,11 +14,11 @@ public class HintParticle : MonoBehaviour {
 
 	void FixedUpdate () {
 		if (CheckDistanceToPlayer () <= playerDistThresh && SameHeightPlayer()) {
-			renderer.enabled = true;
+			GetComponent<Renderer>().enabled = true;
 		}
 
 		else{
-			renderer.enabled = false;
+			GetComponent<Renderer>().enabled = false;
 		}
 	}
 
