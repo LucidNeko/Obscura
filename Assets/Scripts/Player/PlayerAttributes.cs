@@ -45,6 +45,10 @@ public class PlayerAttributes : MonoBehaviour {
 		healthLevel -= amount;
 	}
 
+	public float GetHealth(){
+		return healthLevel;
+	}
+
 
 
 
