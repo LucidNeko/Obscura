@@ -2,63 +2,64 @@
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(CapsuleCollider))]
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour {
 
-	public float groundRayLength = 0.2f;
+	public float rotationSpeed = 10f;
+	public float moveSpeed = 6f;
 	public float jumpForce = 15f;
 	public float gravityMultiplier = 4f;
+	public float groundRayLength = 0.2f;
 
-	private Rigidbody mBody;
-	private CapsuleCollider mCapsule;
-	private Animator mAnim;
-	private float mCapsuleHeight;
-	private Vector3 mCapsuleCenter;
+	private Rigidbody _body;
+	private Animator _anim;
 
-	private bool mIsGrounded; 
-	private Vector3 mGroundNormal;
+	private bool _isGrounded; 
+	private Vector3 _groundNormal;
 
-	private float mTurnAmount;
-	private float mForwardAmount;
-
+	private float _turnAmount;
+	private float _forwardAmount;
 
 	// Use this for initialization
 	void Start() {
-		mBody = GetComponent<Rigidbody>();
-		mAnim = GetComponent<Animator>();
-		mCapsule = GetComponent<CapsuleCollider>();
-		mCapsuleHeight = mCapsule.height;
-		mCapsuleCenter = mCapsule.center;
+		_body = GetComponent<Rigidbody>();
+		_anim = GetComponent<Animator>();
 
 		//freeze rigidbody rotation
-		mBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+		_body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 	}
 
 	//move should always be normalazied with magnitude <= 1
 	public void Move(Vector3 move, bool jump) {
 
+		CheckOnGround ();
+		
+		//If we are actually moving
 		if (move != Vector3.zero) {
-			
-//			transform.forward = move; //Vector3.Lerp (transform.forward, move, Time.deltaTime * 10f);
-			mBody.MoveRotation(Quaternion.Slerp(mBody.rotation, Quaternion.LookRotation(move), Time.deltaTime*10));
+			//look in direction of move
+			_body.MoveRotation (Quaternion.Slerp (_body.rotation, Quaternion.LookRotation (move), Time.deltaTime * rotationSpeed));
+
+			//covert //global/camera move vector into local space
 			move = transform.InverseTransformDirection (move);
 
-			CheckOnGround ();
-			move = Vector3.ProjectOnPlane (move, mGroundNormal);
-			mTurnAmount = Mathf.Atan2 (move.x, move.z); //angle between x and z
-			mForwardAmount = move.z;
+			//project on a plane so that we walk slower up slopes.
+			move = Vector3.ProjectOnPlane (move, _groundNormal);
 
-			//		float turnSpeed = 100f;
-			//		transform.Rotate(0, mTurnAmount * turnSpeed * Time.deltaTime, 0);
+			//angle between x and z
+			_turnAmount = Mathf.Atan2 (move.x, move.z); 
 
+			//if we are on flat ground it will be 1, if on a upwards slop it will be < 1. creating a slower move up slopes
+			_forwardAmount = move.z;
 
-			//		Debug.Log (move);
-
-			mBody.MovePosition (transform.position + transform.forward * mForwardAmount * 6f * Time.deltaTime);
+//			_body.MovePosition (transform.position + transform.forward * _forwardAmount * moveSpeed * Time.deltaTime);
+			_body.MovePosition (Vector3.Lerp(_body.position, _body.position + _body.transform.forward * _forwardAmount * moveSpeed, Time.deltaTime));
+		} else {
+			//reset animator properties
+			_turnAmount = 0f;
+			_forwardAmount = 0f;
 		}
 
-		if (mIsGrounded) {
+		if (_isGrounded) {
 			HandleJump(jump);
 		} else {
 			FallFaster();
@@ -70,34 +71,35 @@ public class PlayerController : MonoBehaviour {
 	private void CheckOnGround() {
 		RaycastHit info;
 		if(Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out info, groundRayLength)) {
-//		if(Physics.SphereCast(transform.position + (Vector3.up * 0.1f), 0.1f, Vector3.down, out info, groundRayLength)) {
-			mGroundNormal = info.normal;
-			mIsGrounded = true;
+			_groundNormal = info.normal;
+			_isGrounded = true;
 		} else {
-			mGroundNormal = Vector3.up;
-			mIsGrounded = false;
+			_groundNormal = Vector3.up;
+			_isGrounded = false;
 		}
 	}
 
 	private void FallFaster() {
-		mBody.AddForce ((Physics.gravity * gravityMultiplier) - Physics.gravity); //subtract gravity, so that a 2x multiplier just ads on one mroe lot of gravity.
-
-		//adjust ground check distance?
+		//Add additional gravitational force
+		//subtract gravity, so that a 2x multiplier just ads on one mroe lot of gravity.
+		_body.AddForce ((Physics.gravity * gravityMultiplier) - Physics.gravity); 
 	}
 
 	private void HandleJump(bool jump) {
-		if (jump && mIsGrounded) {
-			mBody.velocity = new Vector3(mBody.velocity.x, jumpForce, mBody.velocity.z);
-			mIsGrounded = false;
+		if (jump && _isGrounded) {
+			_body.velocity = new Vector3(_body.velocity.x, jumpForce, _body.velocity.z);
+			_isGrounded = false;
 		}
 	}
 
 	private void UpdateAnimatorProperties() {
-		mAnim.SetFloat("Forward", mForwardAmount, 0.1f, Time.deltaTime);
-		mAnim.SetFloat("Turn", mTurnAmount, 0.1f, Time.deltaTime);
-		mAnim.SetBool("OnGround", mIsGrounded);
-		if(!mIsGrounded) {
-			mAnim.SetFloat("Jump", mBody.velocity.y);
+		_anim.SetFloat("Forward", _forwardAmount, 0.1f, Time.deltaTime);
+		_anim.SetFloat("Turn", _turnAmount, 0.1f, Time.deltaTime);
+		_anim.SetBool("OnGround", _isGrounded);
+		if (!_isGrounded) {
+			_anim.SetFloat ("Jump", _body.velocity.y);
+		} else {
+			_anim.SetFloat ("Jump", 0f);
 		}
 	}
 }
