@@ -41,7 +41,7 @@ public class TrackingCameraRig : MonoBehaviour {
 
 		HandlePosition ();
 		HandleOrientation (horizontal, camJoyX, camJoyY, true, false);
-		HandleCameraClipping();
+//		HandleCameraClipping(); //causing camera spazz
 
 	}
 

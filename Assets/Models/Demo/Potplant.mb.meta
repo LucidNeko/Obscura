@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: 82ae947878d5c40f994bf1d9ea745c91
+timeCreated: 1430205577
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: curvePalmLeafy
+    100002: curvePalmLeafy1
+    100004: curvePalmLeafy2
+    100006: curvePalmLeafy3
+    100008: curvePalmLeafy4
+    100010: curvePalmLeafy5
+    100012: curvePalmLeafy6
+    100014: palmLeafy1MeshGroup
+    100016: palmLeafy2MeshGroup
+    100018: palmLeafy3MeshGroup
+    100020: palmLeafy4MeshGroup
+    100022: palmLeafy5MeshGroup
+    100024: pCylinder3
+    100026: //RootNode
+    100028: strokePalmLeafy1
+    100030: strokePalmLeafy2
+    100032: strokePalmLeafy3
+    100034: strokePalmLeafy4
+    100036: strokePalmLeafy5
+    100038: strokePalmLeafy7
+    400000: curvePalmLeafy
+    400002: curvePalmLeafy1
+    400004: curvePalmLeafy2
+    400006: curvePalmLeafy3
+    400008: curvePalmLeafy4
+    400010: curvePalmLeafy5
+    400012: curvePalmLeafy6
+    400014: palmLeafy1MeshGroup
+    400016: palmLeafy2MeshGroup
+    400018: palmLeafy3MeshGroup
+    400020: palmLeafy4MeshGroup
+    400022: palmLeafy5MeshGroup
+    400024: pCylinder3
+    400026: //RootNode
+    400028: strokePalmLeafy1
+    400030: strokePalmLeafy2
+    400032: strokePalmLeafy3
+    400034: strokePalmLeafy4
+    400036: strokePalmLeafy5
+    400038: strokePalmLeafy7
+    2300000: pCylinder3
+    3300000: pCylinder3
+    4300000: pCylinder3
+    6400000: pCylinder3
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

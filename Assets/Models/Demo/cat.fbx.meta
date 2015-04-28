@@ -1,0 +1,742 @@
+fileFormatVersion: 2
+guid: 30bbbf6d1bf4c49689d9b9b543799779
+timeCreated: 1430201691
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: back_of_head
+    100002: //RootNode
+    100004: center_hip
+    100006: front_of_head
+    100008: hip_control
+    100010: L_ankle
+    100012: L_Ankle_control
+    100014: L_ball_of_foot
+    100016: L_elbow
+    100018: L_elbow_control
+    100020: L_end_of_toes
+    100022: L_hand_control
+    100024: L_hand_control1
+    100026: L_hand_end
+    100028: L_hand_root_joint
+    100030: L_hip
+    100032: L_knee
+    100034: L_leg_IK
+    100036: L_Leg_IK_Control
+    100038: L_middle_of_foot
+    100040: L_shoulder
+    100042: L_shoulder_control
+    100044: L_thumb_end
+    100046: L_thumb_root
+    100048: L_toe_control
+    100050: L_wrist
+    100052: L_wrist_control
+    100054: left1
+    100056: MC
+    100058: MC_placement_control
+    100060: MC_root
+    100062: neck
+    100064: pPlane3
+    100066: pSphere2
+    100068: pSphere3
+    100070: R_ankle
+    100072: R_Ankle_control
+    100074: R_ball_of_foot
+    100076: R_elbow
+    100078: R_elbow_control
+    100080: R_end_of_toes
+    100082: R_hand_control
+    100084: R_hand_control2
+    100086: R_hand_end
+    100088: R_hand_root_joint
+    100090: R_hip
+    100092: R_knee
+    100094: R_leg_Ik
+    100096: R_Leg_IK_Control
+    100098: R_middle_of_foot
+    100100: R_shoulder
+    100102: R_shoulder_control
+    100104: R_thumb_end
+    100106: R_thumb_root
+    100108: R_toe_control
+    100110: R_wrist
+    100112: R_wrist_control
+    100114: root_control
+    100116: spine_low_control
+    100118: spine_lowest
+    100120: spine_middle
+    100122: spine_middle_control
+    100124: spine_middle_control1
+    100126: spine_shoulder
+    100128: tail_joint_1
+    100130: tail_joint_2
+    100132: tail_joint_2_control
+    100134: tail_joint_3
+    100136: tail_joint_3_control
+    100138: tail_root
+    100140: tail_root_control
+    100142: tail_tip
+    100144: w
+    400000: back_of_head
+    400002: //RootNode
+    400004: center_hip
+    400006: front_of_head
+    400008: hip_control
+    400010: L_ankle
+    400012: L_Ankle_control
+    400014: L_ball_of_foot
+    400016: L_elbow
+    400018: L_elbow_control
+    400020: L_end_of_toes
+    400022: L_hand_control
+    400024: L_hand_control1
+    400026: L_hand_end
+    400028: L_hand_root_joint
+    400030: L_hip
+    400032: L_knee
+    400034: L_leg_IK
+    400036: L_Leg_IK_Control
+    400038: L_middle_of_foot
+    400040: L_shoulder
+    400042: L_shoulder_control
+    400044: L_thumb_end
+    400046: L_thumb_root
+    400048: L_toe_control
+    400050: L_wrist
+    400052: L_wrist_control
+    400054: left1
+    400056: MC
+    400058: MC_placement_control
+    400060: MC_root
+    400062: neck
+    400064: pPlane3
+    400066: pSphere2
+    400068: pSphere3
+    400070: R_ankle
+    400072: R_Ankle_control
+    400074: R_ball_of_foot
+    400076: R_elbow
+    400078: R_elbow_control
+    400080: R_end_of_toes
+    400082: R_hand_control
+    400084: R_hand_control2
+    400086: R_hand_end
+    400088: R_hand_root_joint
+    400090: R_hip
+    400092: R_knee
+    400094: R_leg_Ik
+    400096: R_Leg_IK_Control
+    400098: R_middle_of_foot
+    400100: R_shoulder
+    400102: R_shoulder_control
+    400104: R_thumb_end
+    400106: R_thumb_root
+    400108: R_toe_control
+    400110: R_wrist
+    400112: R_wrist_control
+    400114: root_control
+    400116: spine_low_control
+    400118: spine_lowest
+    400120: spine_middle
+    400122: spine_middle_control
+    400124: spine_middle_control1
+    400126: spine_shoulder
+    400128: tail_joint_1
+    400130: tail_joint_2
+    400132: tail_joint_2_control
+    400134: tail_joint_3
+    400136: tail_joint_3_control
+    400138: tail_root
+    400140: tail_root_control
+    400142: tail_tip
+    400144: w
+    2300000: pPlane3
+    2300002: pSphere2
+    2300004: pSphere3
+    3300000: pPlane3
+    3300002: pSphere2
+    3300004: pSphere3
+    4300000: MC
+    4300002: pSphere3
+    4300004: pSphere2
+    4300006: pPlane3
+    7400000: Walk
+    7400002: Jump
+    7400004: Idle
+    9500000: //RootNode
+    13700000: MC
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_leg_IK
+        weight: 1
+      - path: left1
+        weight: 1
+      - path: MC
+        weight: 1
+      - path: MC_placement_control
+        weight: 1
+      - path: MC_placement_control/L_Leg_IK_Control
+        weight: 1
+      - path: MC_placement_control/L_Leg_IK_Control/L_Ankle_control
+        weight: 1
+      - path: MC_placement_control/L_Leg_IK_Control/L_toe_control
+        weight: 1
+      - path: MC_placement_control/R_Leg_IK_Control
+        weight: 1
+      - path: MC_placement_control/R_Leg_IK_Control/R_Ankle_control
+        weight: 1
+      - path: MC_placement_control/R_Leg_IK_Control/R_toe_control
+        weight: 1
+      - path: MC_placement_control/root_control
+        weight: 1
+      - path: MC_placement_control/root_control/hip_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control/L_wrist_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control/L_wrist_control/L_hand_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control/L_wrist_control/L_hand_control1
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control/R_wrist_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control/R_wrist_control/R_hand_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control/R_wrist_control/R_hand_control2
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/spine_middle_control1
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control/w
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control/w/tail_joint_2_control
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control/w/tail_joint_2_control/tail_joint_3_control
+        weight: 1
+      - path: MC_root
+        weight: 1
+      - path: MC_root/center_hip
+        weight: 1
+      - path: MC_root/center_hip/L_hip
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle/L_ball_of_foot
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle/L_ball_of_foot/L_middle_of_foot
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle/L_ball_of_foot/L_middle_of_foot/L_end_of_toes
+        weight: 1
+      - path: MC_root/center_hip/R_hip
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle/R_ball_of_foot
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle/R_ball_of_foot/R_middle_of_foot
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle/R_ball_of_foot/R_middle_of_foot/R_end_of_toes
+        weight: 1
+      - path: MC_root/spine_lowest
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_hand_root_joint
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_hand_root_joint/L_hand_end
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_thumb_root
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_thumb_root/L_thumb_end
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/back_of_head
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/back_of_head/front_of_head
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/pSphere2
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/pSphere3
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/pPlane3
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_hand_root_joint
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_hand_root_joint/R_hand_end
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_thumb_root
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_thumb_root/R_thumb_end
+        weight: 1
+      - path: MC_root/tail_root
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1/tail_joint_2
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1/tail_joint_2/tail_joint_3
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1/tail_joint_2/tail_joint_3/tail_tip
+        weight: 1
+      - path: R_leg_Ik
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Jump
+      takeName: Take 001
+      firstFrame: 31
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_leg_IK
+        weight: 1
+      - path: left1
+        weight: 1
+      - path: MC
+        weight: 1
+      - path: MC_placement_control
+        weight: 1
+      - path: MC_placement_control/L_Leg_IK_Control
+        weight: 1
+      - path: MC_placement_control/L_Leg_IK_Control/L_Ankle_control
+        weight: 1
+      - path: MC_placement_control/L_Leg_IK_Control/L_toe_control
+        weight: 1
+      - path: MC_placement_control/R_Leg_IK_Control
+        weight: 1
+      - path: MC_placement_control/R_Leg_IK_Control/R_Ankle_control
+        weight: 1
+      - path: MC_placement_control/R_Leg_IK_Control/R_toe_control
+        weight: 1
+      - path: MC_placement_control/root_control
+        weight: 1
+      - path: MC_placement_control/root_control/hip_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control/L_wrist_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control/L_wrist_control/L_hand_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control/L_wrist_control/L_hand_control1
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control/R_wrist_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control/R_wrist_control/R_hand_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control/R_wrist_control/R_hand_control2
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/spine_middle_control1
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control/w
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control/w/tail_joint_2_control
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control/w/tail_joint_2_control/tail_joint_3_control
+        weight: 1
+      - path: MC_root
+        weight: 1
+      - path: MC_root/center_hip
+        weight: 1
+      - path: MC_root/center_hip/L_hip
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle/L_ball_of_foot
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle/L_ball_of_foot/L_middle_of_foot
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle/L_ball_of_foot/L_middle_of_foot/L_end_of_toes
+        weight: 1
+      - path: MC_root/center_hip/R_hip
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle/R_ball_of_foot
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle/R_ball_of_foot/R_middle_of_foot
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle/R_ball_of_foot/R_middle_of_foot/R_end_of_toes
+        weight: 1
+      - path: MC_root/spine_lowest
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_hand_root_joint
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_hand_root_joint/L_hand_end
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_thumb_root
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_thumb_root/L_thumb_end
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/back_of_head
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/back_of_head/front_of_head
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/pSphere2
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/pSphere3
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/pPlane3
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_hand_root_joint
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_hand_root_joint/R_hand_end
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_thumb_root
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_thumb_root/R_thumb_end
+        weight: 1
+      - path: MC_root/tail_root
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1/tail_joint_2
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1/tail_joint_2/tail_joint_3
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1/tail_joint_2/tail_joint_3/tail_tip
+        weight: 1
+      - path: R_leg_Ik
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 31
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_leg_IK
+        weight: 1
+      - path: left1
+        weight: 1
+      - path: MC
+        weight: 1
+      - path: MC_placement_control
+        weight: 1
+      - path: MC_placement_control/L_Leg_IK_Control
+        weight: 1
+      - path: MC_placement_control/L_Leg_IK_Control/L_Ankle_control
+        weight: 1
+      - path: MC_placement_control/L_Leg_IK_Control/L_toe_control
+        weight: 1
+      - path: MC_placement_control/R_Leg_IK_Control
+        weight: 1
+      - path: MC_placement_control/R_Leg_IK_Control/R_Ankle_control
+        weight: 1
+      - path: MC_placement_control/R_Leg_IK_Control/R_toe_control
+        weight: 1
+      - path: MC_placement_control/root_control
+        weight: 1
+      - path: MC_placement_control/root_control/hip_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control/L_wrist_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control/L_wrist_control/L_hand_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/L_shoulder_control/L_elbow_control/L_wrist_control/L_hand_control1
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control/R_wrist_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control/R_wrist_control/R_hand_control
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/R_shoulder_control/R_elbow_control/R_wrist_control/R_hand_control2
+        weight: 1
+      - path: MC_placement_control/root_control/spine_low_control/spine_middle_control/spine_middle_control1
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control/w
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control/w/tail_joint_2_control
+        weight: 1
+      - path: MC_placement_control/root_control/tail_root_control/w/tail_joint_2_control/tail_joint_3_control
+        weight: 1
+      - path: MC_root
+        weight: 1
+      - path: MC_root/center_hip
+        weight: 1
+      - path: MC_root/center_hip/L_hip
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle/L_ball_of_foot
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle/L_ball_of_foot/L_middle_of_foot
+        weight: 1
+      - path: MC_root/center_hip/L_hip/L_knee/L_ankle/L_ball_of_foot/L_middle_of_foot/L_end_of_toes
+        weight: 1
+      - path: MC_root/center_hip/R_hip
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle/R_ball_of_foot
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle/R_ball_of_foot/R_middle_of_foot
+        weight: 1
+      - path: MC_root/center_hip/R_hip/R_knee/R_ankle/R_ball_of_foot/R_middle_of_foot/R_end_of_toes
+        weight: 1
+      - path: MC_root/spine_lowest
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_hand_root_joint
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_hand_root_joint/L_hand_end
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_thumb_root
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/L_shoulder/L_elbow/L_wrist/L_thumb_root/L_thumb_end
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/back_of_head
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/back_of_head/front_of_head
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/pSphere2
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/neck/pSphere3
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/pPlane3
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_hand_root_joint
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_hand_root_joint/R_hand_end
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_thumb_root
+        weight: 1
+      - path: MC_root/spine_lowest/spine_middle/spine_shoulder/R_shoulder/R_elbow/R_wrist/R_thumb_root/R_thumb_end
+        weight: 1
+      - path: MC_root/tail_root
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1/tail_joint_2
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1/tail_joint_2/tail_joint_3
+        weight: 1
+      - path: MC_root/tail_root/tail_joint_1/tail_joint_2/tail_joint_3/tail_tip
+        weight: 1
+      - path: R_leg_Ik
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
