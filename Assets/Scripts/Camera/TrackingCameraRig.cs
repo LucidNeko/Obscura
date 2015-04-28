@@ -17,6 +17,8 @@ public class TrackingCameraRig : MonoBehaviour {
 	private float _defaultPitch;
 	private float _defaultDistance;
 
+	private Vector3 _oldPos, _oldTargetPos;
+
 	// Use this for initialization
 	void Awake () {
 		if (target == null) {
@@ -26,10 +28,13 @@ public class TrackingCameraRig : MonoBehaviour {
 		_pivot = _camera.parent;
 		_defaultPitch = _pivot.eulerAngles.x;
 		_defaultDistance = _camera.localPosition.z;
+
+		_oldPos = transform.position;
+		_oldTargetPos = target.position;
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void LateUpdate () {
 		float horizontal = Input.GetAxis ("Horizontal");
 		float camJoyX = Input.GetAxis ("Joy X");
 		float camJoyY = Input.GetAxis ("Joy Y");
@@ -42,7 +47,11 @@ public class TrackingCameraRig : MonoBehaviour {
 
 	private void HandlePosition() {
 		//set rig base to be targets position
-		transform.position = Vector3.Lerp(transform.position, target.transform.position, Time.deltaTime * trackingSpeed);
+//		transform.position = Vector3.Lerp(transform.position, target.transform.position, Time.deltaTime * trackingSpeed);
+		transform.position = SuperSmoothLerp (_oldPos, _oldTargetPos, target.position, Time.time, trackingSpeed);
+
+	     _oldPos = transform.position;
+	     _oldTargetPos = target.position;
 	}
 
 	private void HandleOrientation(float horizontal, float camJoyX, float camJoyY, bool invertX, bool invertY) {
@@ -77,5 +86,14 @@ public class TrackingCameraRig : MonoBehaviour {
 			pos.z = Mathf.Lerp(pos.z, _defaultDistance, Time.deltaTime * zoomSpeed);
 			_camera.localPosition = pos;
 		}
+	}
+
+	/** 
+	 * Super Smooth Lerp code from:
+	 * http://forum.unity3d.com/threads/how-to-smooth-damp-towards-a-moving-target-without-causing-jitter-in-the-movement.130920/
+	 */
+	private Vector3 SuperSmoothLerp(Vector3 x0, Vector3 y0, Vector3 yt, float t, float k) {
+		Vector3 f = x0 - y0 + (yt - y0) / (k * t);
+		return yt - (yt - y0) / (k*t) + f * Mathf.Exp(-k*t);
 	}
 }

@@ -1025,6 +1025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d394ec371b7f68b4dbf0d29140bd3d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_HardMode: 1
   m_Light: {fileID: 1925874011}
   m_Dark: {fileID: 154699990}
 --- !u!4 &1090177283
