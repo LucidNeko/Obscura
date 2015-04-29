@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
 	private float _turnAmount;
 	private float _forwardAmount;
 
+	private Vector3 _lastGround;
+
 	// Use this for initialization
 	void Start() {
 		_body = GetComponent<Rigidbody>();
@@ -63,7 +65,9 @@ public class PlayerController : MonoBehaviour {
 			HandleJump(jump);
 		} else {
 			FallFaster();
+			FallBackToEarth ();
 		}
+
 
 		UpdateAnimatorProperties();
 	}
@@ -71,6 +75,9 @@ public class PlayerController : MonoBehaviour {
 	private void CheckOnGround() {
 		RaycastHit info;
 		if(Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out info, groundRayLength)) {
+			if(_isGrounded == false) {
+				_lastGround = transform.position;
+			}
 			_groundNormal = info.normal;
 			_isGrounded = true;
 		} else {
@@ -100,6 +107,13 @@ public class PlayerController : MonoBehaviour {
 			_anim.SetFloat ("Jump", _body.velocity.y);
 		} else {
 			_anim.SetFloat ("Jump", 0f);
+		}
+	}
+
+	private void FallBackToEarth() {
+		if (transform.position.y < -30) {
+			_body.MovePosition(_lastGround + Vector3.up*30);
+			_body.velocity = Vector3.Scale(_body.velocity, new Vector3(0, 1, 0));
 		}
 	}
 }
