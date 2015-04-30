@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour {
 	private float _forwardAmount;
 
 	private Vector3 _lastGround;
+	private Vector3 _fallingVelocity = Vector3.zero;
 
 	// Use this for initialization
 	void Start() {
@@ -78,9 +79,16 @@ public class PlayerController : MonoBehaviour {
 			if(_isGrounded == false) {
 				_lastGround = transform.position;
 			}
+
+			if(_fallingVelocity.y < -50) {
+				FallDamage();
+				_fallingVelocity = Vector3.zero;
+			}
+
 			_groundNormal = info.normal;
 			_isGrounded = true;
 		} else {
+			_fallingVelocity = _body.velocity;
 			_groundNormal = Vector3.up;
 			_isGrounded = false;
 		}
@@ -114,6 +122,33 @@ public class PlayerController : MonoBehaviour {
 		if (transform.position.y < -30) {
 			_body.MovePosition(_lastGround + Vector3.up*30);
 			_body.velocity = Vector3.Scale(_body.velocity, new Vector3(0, 1, 0));
+		}
+	}
+
+	private void FallDamage() {
+		Debug.Log ("ouch");
+		StartCoroutine (Ouch (2));
+	}
+
+	IEnumerator Ouch(float duration) {
+		float t = 0;
+		while(t < 1) {
+			t += 0.25f; //speed
+			Vector3 scale = transform.localScale;
+			scale.y = Mathf.Lerp(1, 0.1f, t);
+			transform.localScale = scale;
+			yield return null;
+		}
+
+		yield return new WaitForSeconds (0.25f);
+
+		t = 0;
+		while (t < 1) {
+			t += 0.1f; //speed
+			Vector3 scale = transform.localScale;
+			scale.y = Mathf.Lerp(0.1f, 1, t);
+			transform.localScale = scale;
+			yield return null;
 		}
 	}
 }
