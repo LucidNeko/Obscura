@@ -19,7 +19,7 @@ public class BallInstantiator : MonoBehaviour {
 	IEnumerator Spawn() {
 		for(int i = 0; i < m_NumBalls; i++) {
 			Instantiate(m_Object, transform.position, transform.rotation);
-			yield return new WaitForSeconds(0.2f);
+			yield return new WaitForSeconds(0.1f);
 		}
 	}
 }

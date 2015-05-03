@@ -1,24 +1,42 @@
 fileFormatVersion: 2
-guid: 6bf27303d6dbb4d3da9b93aeaac3f299
-timeCreated: 1430206811
+guid: d17b870d765fe4389bc160c463983787
+timeCreated: 1430646242
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pCube1
-    100004: pCube2
-    400000: //RootNode
-    400002: pCube1
-    400004: pCube2
-    2300000: pCube1
-    2300002: pCube2
-    3300000: pCube1
-    3300002: pCube2
-    4300000: pCube1
-    4300002: pCube2
-    6400000: pCube1
-    6400002: pCube2
+    100000: Low_Poly_tree:pCube16
+    100002: Low_Poly_tree:pCube17
+    100004: Low_Poly_tree:pCube18
+    100006: Low_Poly_tree:pCube19
+    100008: Low_Poly_tree:pCube20
+    100010: Low_Poly_tree:pCube21
+    100012: Low_Poly_tree:transform1
+    100014: Low_Poly_tree:transform2
+    100016: Low_Poly_tree:transform3
+    100018: Low_Poly_tree:transform4
+    100020: Low_Poly_tree:transform5
+    100022: Low_Poly_tree:transform6
+    100024: pCylinder1
+    100026: //RootNode
+    400000: Low_Poly_tree:pCube16
+    400002: Low_Poly_tree:pCube17
+    400004: Low_Poly_tree:pCube18
+    400006: Low_Poly_tree:pCube19
+    400008: Low_Poly_tree:pCube20
+    400010: Low_Poly_tree:pCube21
+    400012: Low_Poly_tree:transform1
+    400014: Low_Poly_tree:transform2
+    400016: Low_Poly_tree:transform3
+    400018: Low_Poly_tree:transform4
+    400020: Low_Poly_tree:transform5
+    400022: Low_Poly_tree:transform6
+    400024: pCylinder1
+    400026: //RootNode
+    2300000: pCylinder1
+    3300000: pCylinder1
+    4300000: pCylinder1
+    6400000: pCylinder1
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -39,7 +57,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: 1
     meshCompression: 0
     addColliders: 1
     importBlendShapes: 1
