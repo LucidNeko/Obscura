@@ -9,6 +9,7 @@ public class RealityRift : MonoBehaviour {
 
 	public Transform m_Player;
 	public TrackingCameraRig m_Camera;
+	public ParticleSystem particleEffect;
 
 	public bool m_HardMode = true;
 
