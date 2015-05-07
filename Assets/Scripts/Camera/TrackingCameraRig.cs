@@ -17,6 +17,8 @@ public class TrackingCameraRig : MonoBehaviour {
 	private float _defaultPitch;
 	private float _defaultDistance;
 
+	private Vector3 _cameraDefaultPosition;
+
 	private Vector3 _oldPos, _oldTargetPos;
 
 	// Use this for initialization
@@ -28,9 +30,16 @@ public class TrackingCameraRig : MonoBehaviour {
 		_pivot = _camera.parent;
 		_defaultPitch = _pivot.eulerAngles.x;
 		_defaultDistance = _camera.localPosition.z;
+		_cameraDefaultPosition = _camera.localPosition;
 
 		_oldPos = transform.position;
 		_oldTargetPos = target.position;
+	}
+
+	void Update() {
+		if (Input.GetKeyDown (KeyCode.F)) {
+			StartCoroutine(Shake(5, 0.5f));
+		}
 	}
 	
 	// Update is called once per frame
@@ -42,7 +51,6 @@ public class TrackingCameraRig : MonoBehaviour {
 		HandlePosition ();
 		HandleOrientation (horizontal, camJoyX, camJoyY, true, false);
 		HandleCameraClipping(); //causing camera spazz
-
 	}
 
 	private void HandlePosition() {
@@ -95,5 +103,19 @@ public class TrackingCameraRig : MonoBehaviour {
 	private Vector3 SuperSmoothLerp(Vector3 x0, Vector3 y0, Vector3 yt, float t, float k) {
 		Vector3 f = x0 - y0 + (yt - y0) / (k * t);
 		return yt - (yt - y0) / (k*t) + f * Mathf.Exp(-k*t);
+	}
+
+	public IEnumerator Shake(float intensity, float duration) {
+		float time = 0f;
+		while(time < duration) {
+			time += Time.deltaTime;
+			Vector3 offset = SmoothRandom.GetVector3 (intensity).normalized;
+			offset.Scale(new Vector3(Random.Range(0f, 1f) < 0.5f ? 1 : -1, 
+			                         Random.Range(0f, 1f) < 0.5f ? 1 : -1, 
+			                         Random.Range(0f, 1f) < 0.5f ? 1 : -1));
+			_camera.localPosition = Vector3.Lerp(_camera.localPosition, _cameraDefaultPosition + offset, Time.deltaTime * intensity*1.5f);
+			yield return null;
+		}
+		_camera.localPosition = _cameraDefaultPosition;
 	}
 }

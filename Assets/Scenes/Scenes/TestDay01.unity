@@ -459,8 +459,8 @@ Transform:
   - {fileID: 497342972}
   - {fileID: 1678679676}
   - {fileID: 669125848}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1132460791}
+  m_RootOrder: 5
 --- !u!1001 &110154025
 Prefab:
   m_ObjectHideFlags: 0
@@ -3300,6 +3300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d394ec371b7f68b4dbf0d29140bd3d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 1688869867}
+  m_Camera: {fileID: 486095181}
   m_HardMode: 0
   m_Light: {fileID: 1162376507}
   m_Dark: {fileID: 1132460790}
@@ -3314,7 +3316,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!82 &659493571
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3411,7 +3413,7 @@ Transform:
   m_Children:
   - {fileID: 486095180}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1001 &665966280
 Prefab:
   m_ObjectHideFlags: 0
@@ -4696,7 +4698,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411634, guid: 010154ce9526f48bbbc928f487c98d41, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 010154ce9526f48bbbc928f487c98d41, type: 2}
@@ -5242,8 +5244,9 @@ Transform:
   - {fileID: 1363280982}
   - {fileID: 1532076141}
   - {fileID: 1726804379}
+  - {fileID: 96749176}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &1157366204
 GameObject:
   m_ObjectHideFlags: 0
@@ -5376,7 +5379,7 @@ Transform:
   - {fileID: 1781314742}
   - {fileID: 145502795}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1167638227
 GameObject:
   m_ObjectHideFlags: 0
@@ -5408,7 +5411,7 @@ Transform:
   - {fileID: 1873657266}
   - {fileID: 2010104487}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1182967645
 GameObject:
   m_ObjectHideFlags: 0
@@ -7590,6 +7593,10 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!4 &1688869867
+Transform:
+  m_PrefabParentObject: {fileID: 411634, guid: 010154ce9526f48bbbc928f487c98d41, type: 2}
+  m_PrefabInternal: {fileID: 1046104091}
 --- !u!1 &1691844928
 GameObject:
   m_ObjectHideFlags: 0
