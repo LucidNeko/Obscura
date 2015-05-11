@@ -49,7 +49,7 @@ public class RealityRift : MonoBehaviour {
 
 	void PlayerRift() {
 		StartCoroutine(Combust (10));
-		StartCoroutine(m_Camera.Shake (3, 0.5f));
+		Camera.main.GetComponent<CameraControls> ().Shake (3, 0.5f);
 	}
 
 	IEnumerator Combust(float speed) {
@@ -57,14 +57,14 @@ public class RealityRift : MonoBehaviour {
 		t = 0;
 		while (t < 1) {
 			t += Time.deltaTime * speed;
-			m_Player.localScale = Vector3.Lerp(new Vector3(1,1,1), new Vector3(0, 0, 0), t);
+			m_Player.localScale = Vector3.Lerp(new Vector3(1,1,1), new Vector3(0.1f, 0.1f, 0.1f), t);
 			yield return null;
 		}
 
 		t = 0;
 		while (t < 1) {
 			t += Time.deltaTime * speed;
-			m_Player.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(1,1,1), t);
+			m_Player.localScale = Vector3.Lerp(new Vector3(0.1f, 0.1f, 0.1f), new Vector3(1,1,1), t);
 			yield return null;
 		}
 	}
