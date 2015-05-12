@@ -36,6 +36,8 @@ public class PlayerRootController : MonoBehaviour {
 	public void Move(Vector3 move, bool jump) {
 
 		CheckOnGround ();
+
+		_anim.applyRootMotion = _isGrounded; //hacky
 		
 		//If we are actually moving
 		if (move != Vector3.zero) {
