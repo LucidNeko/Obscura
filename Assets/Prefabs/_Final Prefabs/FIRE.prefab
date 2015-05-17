@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 454128}
   - 198: {fileID: 19849796}
   - 199: {fileID: 19938852}
-  - 114: {fileID: 11453100}
+  - 114: {fileID: 11444604}
   m_Layer: 0
   m_Name: FIRE 1
   m_TagString: Untagged
@@ -42,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110214}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: -10.8299999, y: -.150000006, z: -3.22000003}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 454128}
@@ -60,7 +60,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 416684}
   m_RootOrder: 0
---- !u!114 &11453100
+--- !u!114 &11444604
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 115942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0183815dda75f4586bcde7f3f45fcc52, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!198 &19849796
@@ -2167,7 +2167,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 76f2f066fdbff4f1689ec5acd66a900f, type: 2}
+  - {fileID: 2100000, guid: 190a5c8e040f64b499041565de97a410, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -2203,7 +2203,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 76f2f066fdbff4f1689ec5acd66a900f, type: 2}
+  - {fileID: 2100000, guid: 190a5c8e040f64b499041565de97a410, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

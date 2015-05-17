@@ -13,6 +13,7 @@ public class PlayerRootController : MonoBehaviour {
 
 	private Rigidbody _body;
 	private Animator _anim;
+	private CapsuleCollider _collider;
 
 	private bool _isGrounded; 
 	private Vector3 _groundNormal;
@@ -27,6 +28,7 @@ public class PlayerRootController : MonoBehaviour {
 	void Start() {
 		_body = GetComponent<Rigidbody>();
 		_anim = GetComponent<Animator>();
+		_collider = GetComponent<CapsuleCollider> ();
 
 		//freeze rigidbody rotation
 		_body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
@@ -56,7 +58,9 @@ public class PlayerRootController : MonoBehaviour {
 			_forwardAmount = move.z;
 
 //			_body.MovePosition (transform.position + transform.forward * _forwardAmount * moveSpeed * Time.deltaTime);
-//			_body.MovePosition (Vector3.Lerp(_body.position, _body.position + _body.transform.forward * _forwardAmount * moveSpeed, Time.deltaTime));
+			if(!_isGrounded) {
+				_body.MovePosition (Vector3.Lerp(_body.position, _body.position + _body.transform.forward * _forwardAmount * moveSpeed, Time.deltaTime));
+			}
 		} else {
 			//reset animator properties
 			_turnAmount = 0f;
@@ -75,6 +79,39 @@ public class PlayerRootController : MonoBehaviour {
 	}
 
 	private void CheckOnGround() {
+//		Vector3 origin = transform.position + (Vector3.up * 0.1f);
+//		float radius = _collider.radius / 2f;
+//
+//		Ray ray = new Ray (origin, Vector3.down);
+//
+//		Debug.Log(origin);
+//		Debug.Log(radius);
+//		Debug.Log (Vector3.down);
+//
+//		RaycastHit info;
+//
+//		if (Physics.SphereCast (ray, radius, out info, groundRayLength)) {
+//			Debug.Log("hit");
+//
+//			if (_isGrounded == false && info.normal == Vector3.up) {
+//				_lastGround = info.point;
+//			}
+//
+//			//by the time we hit, body velocity is already 0. So keep track of it.
+//			if (_fallingVelocity.y < -50) {
+//				FallDamage ();
+//				_fallingVelocity = Vector3.zero;
+//			}
+//
+//			_groundNormal = info.normal;
+//			_isGrounded = true;
+//		} else {
+//			Debug.Log("no-hit");
+//			_fallingVelocity = _body.velocity;
+//			_groundNormal = Vector3.up;
+//			_isGrounded = false;
+//		}
+
 		RaycastHit info;
 		if(Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out info, groundRayLength)) {
 			if(_isGrounded == false) {

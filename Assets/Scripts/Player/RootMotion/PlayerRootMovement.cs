@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof (PlayerController))]
+[RequireComponent(typeof (PlayerRootController))]
 public class PlayerRootMovement : MonoBehaviour {
 
 	private static Vector3 CULL_Y = new Vector3(1, 0, 1);

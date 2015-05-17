@@ -54,7 +54,9 @@ public class PlayerController : MonoBehaviour {
 			//if we are on flat ground it will be 1, if on a upwards slop it will be < 1. creating a slower move up slopes
 			_forwardAmount = move.z;
 
-//			_body.MovePosition (transform.position + transform.forward * _forwardAmount * moveSpeed * Time.deltaTime);
+			if(!_isGrounded) {
+				_body.MovePosition (transform.position + transform.forward * _forwardAmount * moveSpeed * Time.deltaTime);
+			}
 			_body.MovePosition (Vector3.Lerp(_body.position, _body.position + _body.transform.forward * _forwardAmount * moveSpeed, Time.deltaTime));
 		} else {
 			//reset animator properties
