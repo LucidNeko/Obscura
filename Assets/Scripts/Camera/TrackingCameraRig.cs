@@ -84,16 +84,47 @@ public class TrackingCameraRig : MonoBehaviour {
 
 	//shoots a ray from pivot to camera. sets the cameras z offset based on how far along the ray it managed to travel.
 	private void HandleCameraClipping() {
+		int layerMask = LayerMask.GetMask ("Camera Collision");
+//		RaycastHit info;
+//		if (Physics.Raycast (_pivot.position, (_camera.position - _pivot.position).normalized, out info, -_defaultDistance, layerMask)) {
+//			Vector3 pos = _camera.localPosition;
+//			pos.z = Mathf.Lerp(pos.z, Mathf.Min(-1, -info.distance), Time.deltaTime * zoomSpeed);
+//			_camera.localPosition = pos;
+//		} else {
+//			Vector3 pos = _camera.localPosition;
+//			pos.z = Mathf.Lerp(pos.z, _defaultDistance, Time.deltaTime * zoomSpeed);
+//			_camera.localPosition = pos;
+//		}
 		RaycastHit info;
-		if (Physics.Raycast (_pivot.position, (_camera.position - _pivot.position).normalized, out info, -_defaultDistance)) {
-			Vector3 pos = _camera.localPosition;
-			pos.z = Mathf.Lerp(pos.z, Mathf.Min(-1, -info.distance), Time.deltaTime * zoomSpeed);
-			_camera.localPosition = pos;
+		if (Physics.SphereCast (_pivot.position, 0.2f, (_camera.position - _pivot.position).normalized, out info, -_defaultDistance, layerMask)) {
+//			Vector3 pos = _camera.localPosition;
+//			pos.z = Mathf.Lerp(pos.z, Mathf.Min(-1, -info.distance), Time.deltaTime * zoomSpeed);
+//			_camera.localPosition = pos;
+
+			Vector3 pos = _camera.position;
+			Vector3 point = info.point + info.normal*0.2f; //0.2f!! as in spherecast.
+
+			float length = Vector3.Magnitude(_pivot.position - point) - 0.2f;
+
+			Debug.Log (length);
+			Debug.Log (info.distance);
+
+			Vector3 p = _camera.localPosition;
+			p.z = Mathf.Lerp(pos.z, Mathf.Min(-1, -length), Time.deltaTime * zoomSpeed);
+//			p.z = -length;
+			_camera.localPosition = p;
+
+			Debug.DrawLine(_pivot.position, info.point, Color.black);
+			Debug.DrawLine(info.point, info.point + info.normal*2, Color.blue);
+			Debug.DrawLine(_pivot.position, point, Color.green);
+
 		} else {
 			Vector3 pos = _camera.localPosition;
 			pos.z = Mathf.Lerp(pos.z, _defaultDistance, Time.deltaTime * zoomSpeed);
 			_camera.localPosition = pos;
 		}
+
+
 	}
 
 	/** 
