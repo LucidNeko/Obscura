@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: SPRAY
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23,8 +23,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162430}
-  m_LocalRotation: {x: -.766228974, y: -.13898094, z: .0565105528, w: .624807179}
-  m_LocalPosition: {x: -1.04999995, y: 5.34000015, z: 2.73000002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.6499996, y: -10.9899998, z: -14.9899998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

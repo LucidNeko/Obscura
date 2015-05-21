@@ -11,8 +11,10 @@ public class WaterMesh : MonoBehaviour {
 
 	public float swellHeight;
 	public float swellSpeed;
-
+	
+	public GameObject spray;
 	public GameObject island;
+	private Transform islandT;
 
 
 	void Start() {
@@ -21,7 +23,11 @@ public class WaterMesh : MonoBehaviour {
 		minVertices = new float[mesh.vertices.Length];
 		maxVertices = new float[mesh.vertices.Length];
 		vertexAscending = new bool[mesh.vertices.Length];
+
+		islandT = island.transform;
+
 		SetBounds();
+
 	}
 
 	void SetBounds(){
@@ -46,12 +52,12 @@ public class WaterMesh : MonoBehaviour {
 		Vector3[] vertices = mesh.vertices;
 		Vector3[] normals = mesh.normals;
 
-		Chop (vertices, normals);
+		Swell (vertices, normals);
 
 	}
 	
 
-	void Chop(Vector3[] vertices, Vector3[] normals){
+	void Swell(Vector3[] vertices, Vector3[] normals){
 		int i = 0;
 		while (i<vertices.Length) {
 
@@ -64,6 +70,11 @@ public class WaterMesh : MonoBehaviour {
 				else{										//CASE2
 					vertexAscending[i] = false;
 					vertices[i].y -= (random/2) * Time.deltaTime * swellSpeed;
+					if((Vector3.Distance(islandT.position,vertices[i])<75) && (Vector3.Distance(islandT.position,vertices[i])>25) && (Random.value < 0.8 )){
+						Vector3 genpos = vertices[i];
+						genpos.y -= ((swellHeight*2)+2);
+						Instantiate(spray,genpos,Quaternion.LookRotation(Vector3.up)); 
+					}
 				}
 			}
 			else{						
