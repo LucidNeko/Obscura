@@ -139,7 +139,7 @@ public class PlayerRootController : MonoBehaviour {
 	}
 
 	private void HandleJump(bool jump) {
-		if (jump && _isGrounded) {
+		if (jump && _isGrounded && !_anim.IsInTransition(_anim.GetLayerIndex("Base Layer")) && !_anim.GetCurrentAnimatorStateInfo(_anim.GetLayerIndex("Base Layer")).IsName("Jump")) {
 			_body.velocity = new Vector3(_body.velocity.x, jumpForce, _body.velocity.z);
 			_isGrounded = false;
 		}

@@ -21,6 +21,8 @@ public class TrackingCameraRig : MonoBehaviour {
 
 	private Vector3 _oldPos, _oldTargetPos;
 
+	private float distanceFromPivot = 0;
+
 	// Use this for initialization
 	void Awake () {
 		if (target == null) {
@@ -51,6 +53,9 @@ public class TrackingCameraRig : MonoBehaviour {
 		HandlePosition ();
 		HandleOrientation (horizontal, camJoyX, camJoyY, true, false);
 		HandleCameraClipping(); //causing camera spazz
+
+		distanceFromPivot = _camera.localPosition.z;
+//		Debug.Log (distanceFromPivot);
 	}
 
 	private void HandlePosition() {
@@ -63,7 +68,7 @@ public class TrackingCameraRig : MonoBehaviour {
 	}
 
 	private void HandleOrientation(float horizontal, float camJoyX, float camJoyY, bool invertX, bool invertY) {
-		camJoyX -= horizontal; // pivot around camera when walking sideways
+		camJoyX -= horizontal/2f; // pivot around camera when walking sideways // divide 2 is based on how far camera is away
 
 		//invert if required
 		camJoyX = invertX ? -camJoyX : camJoyX;
@@ -85,43 +90,29 @@ public class TrackingCameraRig : MonoBehaviour {
 	//shoots a ray from pivot to camera. sets the cameras z offset based on how far along the ray it managed to travel.
 	private void HandleCameraClipping() {
 		int layerMask = LayerMask.GetMask ("Camera Collision");
-//		RaycastHit info;
-//		if (Physics.Raycast (_pivot.position, (_camera.position - _pivot.position).normalized, out info, -_defaultDistance, layerMask)) {
-//			Vector3 pos = _camera.localPosition;
-//			pos.z = Mathf.Lerp(pos.z, Mathf.Min(-1, -info.distance), Time.deltaTime * zoomSpeed);
-//			_camera.localPosition = pos;
-//		} else {
-//			Vector3 pos = _camera.localPosition;
-//			pos.z = Mathf.Lerp(pos.z, _defaultDistance, Time.deltaTime * zoomSpeed);
-//			_camera.localPosition = pos;
-//		}
+		float radius = 0.2f;
+
 		RaycastHit info;
-		if (Physics.SphereCast (_pivot.position, 0.2f, (_camera.position - _pivot.position).normalized, out info, -_defaultDistance, layerMask)) {
-//			Vector3 pos = _camera.localPosition;
-//			pos.z = Mathf.Lerp(pos.z, Mathf.Min(-1, -info.distance), Time.deltaTime * zoomSpeed);
-//			_camera.localPosition = pos;
+		if (Physics.SphereCast (_pivot.position, radius, (_camera.position - _pivot.position).normalized, out info, -_defaultDistance, layerMask)) {
+			Vector3 point = info.point + info.normal*radius; //0.2f!! as in spherecast.
 
-			Vector3 pos = _camera.position;
-			Vector3 point = info.point + info.normal*0.2f; //0.2f!! as in spherecast.
-
-			float length = Vector3.Magnitude(_pivot.position - point) - 0.2f;
-
-			Debug.Log (length);
-			Debug.Log (info.distance);
+			float length = Vector3.Magnitude(_pivot.position - point) - radius;
 
 			Vector3 p = _camera.localPosition;
-			p.z = Mathf.Lerp(pos.z, Mathf.Min(-1, -length), Time.deltaTime * zoomSpeed);
-//			p.z = -length;
+			p.z = Mathf.Lerp(p.z, Mathf.Min(-1, -length), Time.deltaTime * zoomSpeed);
 			_camera.localPosition = p;
 
 			Debug.DrawLine(_pivot.position, info.point, Color.black);
 			Debug.DrawLine(info.point, info.point + info.normal*2, Color.blue);
 			Debug.DrawLine(_pivot.position, point, Color.green);
-
+//			Debug.DrawLine(_pivot.position, _pivot.position + dir*info.distance, Color.black);
+//			Debug.Log ("hit");
 		} else {
 			Vector3 pos = _camera.localPosition;
 			pos.z = Mathf.Lerp(pos.z, _defaultDistance, Time.deltaTime * zoomSpeed);
 			_camera.localPosition = pos;
+//			Debug.Log ("no-hit");
+			Debug.DrawLine(_pivot.position, _camera.position);
 		}
 
 
