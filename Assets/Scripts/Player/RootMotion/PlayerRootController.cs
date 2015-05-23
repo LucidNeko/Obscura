@@ -38,8 +38,6 @@ public class PlayerRootController : MonoBehaviour {
 	public void Move(Vector3 move, bool jump) {
 
 		CheckOnGround ();
-
-		_anim.applyRootMotion = _isGrounded; //hacky
 		
 		//If we are actually moving
 		if (move != Vector3.zero) {
@@ -189,5 +187,18 @@ public class PlayerRootController : MonoBehaviour {
 			transform.localScale = scale;
 			yield return null;
 		}
+	}
+
+	//Root motion
+
+	public void OnAnimatorMove() {
+		Vector3 velocity = _anim.deltaPosition / Time.deltaTime;
+		velocity.y = _body.velocity.y;
+
+//		if (_anim.GetCurrentAnimatorStateInfo (_anim.GetLayerIndex ("Base Layer")).IsName ("Rush")) {
+//
+//		}
+
+		_body.velocity = velocity;
 	}
 }
