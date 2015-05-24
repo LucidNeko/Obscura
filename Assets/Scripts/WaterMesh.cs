@@ -27,7 +27,7 @@ public class WaterMesh : MonoBehaviour {
 		SetBounds();
 
 
-		//StartWave ();
+		StartWave ();
 
 
 	}
@@ -83,8 +83,10 @@ public class WaterMesh : MonoBehaviour {
 					vertices[i].y += random * Time.deltaTime * swellSpeed;
 				}
 				else{										//CASE2
+					SplashMaybe(vertices[i]);
 					vertexAscending[i] = false;
 					vertices[i].y -= (random/2) * Time.deltaTime * swellSpeed;
+
 				}
 			}
 			else{						
@@ -100,12 +102,26 @@ public class WaterMesh : MonoBehaviour {
 		}
 		mesh.vertices = vertices;
 	}
-	void OnTriggerEnter(Collider other) {
-		if(other.gameObject.tag.Equals ("SplashTrigger")){
-			Debug.Log ("yes");
-			Transform location = other.gameObject.transform;
-			Instantiate(splash,location.position,Quaternion.LookRotation(Vector3.up));
+
+	void SplashMaybe(Vector3 loc){
+		if (ChanceSplash ()) {
+			Vector3 location = new Vector3(loc.x,loc.y,loc.z);
+			location += this.gameObject.transform.position;
+			location.y -= (swellHeight/2);
+			Instantiate(splash,location,RandomDirection());
 		}
+			
+		
+	}
+
+	bool ChanceSplash(){
+		float chance = 0.05f * swellHeight;
+		return (Random.value < chance);
+	}
+
+	Quaternion RandomDirection(){
+		return Random.rotation;
+
 	}
 }
 
