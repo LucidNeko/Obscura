@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 [RequireComponent(typeof (PlayerRootController))]
 public class PlayerRootMovement : MonoBehaviour {
 
@@ -22,7 +21,7 @@ public class PlayerRootMovement : MonoBehaviour {
 
 		Vector3 forward = Vector3.Scale(_camera.forward, CULL_Y).normalized;
 		Vector3 move = v * forward + h * _camera.right;
-		move.Normalize ();
+//		move.Normalize ();
 
 		_controller.Move(move, jump);
 	}

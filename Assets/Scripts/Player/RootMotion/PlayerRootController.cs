@@ -153,6 +153,12 @@ public class PlayerRootController : MonoBehaviour {
 		} else {
 			_anim.SetFloat ("Jump", 0f);
 		}
+
+		_anim.SetBool ("Sprint", Input.GetButton ("Sprint"));
+	
+		if(Input.GetButtonDown ("Attack")) {
+			_anim.SetTrigger ("Attack");
+		}
 	}
 
 	private void FallBackToEarth() {
