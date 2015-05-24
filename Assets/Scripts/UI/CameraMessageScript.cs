@@ -12,7 +12,7 @@ public class CameraMessageScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		if (!hasPlayed || repeat) {
-			if(other.gameObject.name == "Player")
+			if(other.gameObject.CompareTag("Player"))
 			{
 				pushPanel.SetBool("Camera Message Hidden", false);
 			}
@@ -23,7 +23,7 @@ public class CameraMessageScript : MonoBehaviour {
 	void OnTriggerExit(Collider other)
 	{
 		if (!hasPlayed || repeat) {
-			if(other.gameObject.name == "Player")
+			if(other.gameObject.CompareTag("Player"))
 			{
 				hasPlayed = true;
 				pushPanel.SetBool("Camera Message Hidden", true);

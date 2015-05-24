@@ -12,7 +12,7 @@ public class JumpMessage : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		if (!hasPlayed || repeat) {
-			if(other.gameObject.name == "Player")
+			if(other.gameObject.CompareTag("Player"))
 			{
 				pushPanel.SetBool("Jump Message Hidden", false);
 			}
@@ -23,7 +23,7 @@ public class JumpMessage : MonoBehaviour {
 	void OnTriggerExit(Collider other)
 	{
 		if (!hasPlayed || repeat) {
-			if(other.gameObject.name == "Player")
+			if(other.gameObject.CompareTag("Player"))
 			{
 				hasPlayed = true;
 				pushPanel.SetBool("Jump Message Hidden", true);

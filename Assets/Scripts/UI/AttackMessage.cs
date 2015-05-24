@@ -12,7 +12,7 @@ public class AttackMessage : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		if (!hasPlayed || repeat) {
-			if(other.gameObject.name == "Player")
+			if(other.gameObject.CompareTag("Player"))
 			{
 				pushPanel.SetBool("Attack Message Hidden", false);
 			}
@@ -23,7 +23,7 @@ public class AttackMessage : MonoBehaviour {
 	void OnTriggerExit(Collider other)
 	{
 		if (!hasPlayed || repeat) {
-			if(other.gameObject.name == "Player")
+			if(other.gameObject.CompareTag("Player"))
 			{
 				hasPlayed = true;
 				pushPanel.SetBool("Attack Message Hidden", true);

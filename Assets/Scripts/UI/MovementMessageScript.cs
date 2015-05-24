@@ -12,7 +12,7 @@ public class MovementMessageScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		if (!hasPlayed || repeat) {
-			if(other.gameObject.name == "Player")
+			if(other.gameObject.CompareTag("Player"))
 			{
 				pushPanel.SetBool("Movement Message Hidden", false);
 			}
@@ -23,7 +23,7 @@ public class MovementMessageScript : MonoBehaviour {
 	void OnTriggerExit(Collider other)
 	{
 		if (!hasPlayed || repeat) {
-			if(other.gameObject.name == "Player")
+			if(other.gameObject.CompareTag("Player"))
 			{
 				hasPlayed = true;
 				pushPanel.SetBool("Movement Message Hidden", true);

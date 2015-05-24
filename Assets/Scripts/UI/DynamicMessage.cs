@@ -12,9 +12,9 @@ public class DynamicMessage : MonoBehaviour {
 	}
 
 
-	void OnCollisionEnter(Collision Collection)
+	void OnCollisionEnter(Collision collision)
 	{
-		if(Collection.gameObject.name == "Player")
+		if(collision.gameObject.CompareTag("Player"))
 		{
 			message.text = "I changed the text";
 			panel.SetBool("isHidden", false);

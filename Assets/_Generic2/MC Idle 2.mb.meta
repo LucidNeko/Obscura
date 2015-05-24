@@ -84,7 +84,7 @@ ModelImporter:
     4300008: shovel1:shovel_handle3
     4300010: character1_poncho_thing
     4300012: character1_mesh
-    7400000: Take 001
+    7400000: mc_idle02
     9500000: //RootNode
     13700000: character1_mesh
     13700002: character1_poncho_thing
@@ -110,7 +110,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: mc_idle02
       takeName: Take 001
       firstFrame: 1
       lastFrame: 150

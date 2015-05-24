@@ -12,7 +12,7 @@ public class SprintMessageScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		if (!hasPlayed || repeat) {
-			if(other.gameObject.name == "Player")
+			if(other.gameObject.CompareTag("Player"))
 			{
 				pushPanel.SetBool("Sprint Message Hidden", false);
 			}
@@ -23,7 +23,7 @@ public class SprintMessageScript : MonoBehaviour {
 	void OnTriggerExit(Collider other)
 	{
 		if (!hasPlayed || repeat) {
-			if(other.gameObject.name == "Player")
+			if(other.gameObject.CompareTag("Player"))
 			{
 				hasPlayed = true;
 				pushPanel.SetBool("Sprint Message Hidden", true);

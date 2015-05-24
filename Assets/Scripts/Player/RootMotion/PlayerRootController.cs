@@ -77,6 +77,13 @@ public class PlayerRootController : MonoBehaviour {
 	}
 
 	private void CheckOnGround() {
+
+		if (Mathf.Abs(_body.velocity.y) < 0.01f) {
+			_groundNormal = Vector3.up;
+			_isGrounded = true;
+			return;
+		}
+
 //		Vector3 origin = transform.position + (Vector3.up * 0.1f);
 //		float radius = _collider.radius / 2f;
 //

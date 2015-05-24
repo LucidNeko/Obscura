@@ -29,7 +29,7 @@ public class RealityRift : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.LeftShift)) {
+		if (Input.GetKeyDown (KeyCode.LeftShift) || Input.GetButtonDown("Rift")) {
 			m_Source.Play();
 			PlayerRift ();
 			switch(m_State) {
