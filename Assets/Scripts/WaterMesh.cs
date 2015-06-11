@@ -14,6 +14,8 @@ public class WaterMesh : MonoBehaviour {
 
 	public GameObject splash;
 
+	public bool splashesOn;
+
 
 
 	void Start() {
@@ -83,7 +85,7 @@ public class WaterMesh : MonoBehaviour {
 					vertices[i].y += random * Time.deltaTime * swellSpeed;
 				}
 				else{										//CASE2
-					SplashMaybe(vertices[i]);
+					if(splashesOn) SplashMaybe(vertices[i]);	// if Splashes are on, at top of vertex, create a chance for a splash effect to be generated
 					vertexAscending[i] = false;
 					vertices[i].y -= (random/2) * Time.deltaTime * swellSpeed;
 
